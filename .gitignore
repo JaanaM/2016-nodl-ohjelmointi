@@ -1,0 +1,17 @@
+viikko01*/
+viikko02*/
+viikko03*/
+viikko04*/
+Viikko07_133.Kurssipalaute/
+*.jar
+*.xml
+*.json
+*.mf
+*.properties
+*.jpg
+*/test/*
+*.png
+*/lib/*
+*/build/*
+*/nbproject/private/*
+*/dist/*
