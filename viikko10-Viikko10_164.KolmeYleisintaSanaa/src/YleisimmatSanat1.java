@@ -49,22 +49,14 @@ public class YleisimmatSanat1 implements ToistonTunnistin {
             if (yleisimmat.size() < 3) {
                 List<String> top = teeTopKolme(maarat.get(isompi));
                 for (String t : top) {
-                    if (!yleisimmat.contains(t)) {
+                    if (yleisimmat.size() < 3 && !yleisimmat.contains(t)) { // do not add if it already have 3 words or contains it
                         yleisimmat.add(t);
-                    }
-                }
-                if (yleisimmat.size() > 3) {
-                    int maksimi = yleisimmat.size();
-                    for (int i = 2; i < maksimi; i++) {
-                        yleisimmat.remove(i);
-                        maksimi--;
                     }
                 }
                 isompi++;
             } else if (yleisimmat.size() == 3) {
                 break;
             }
-
         }
 
         return yleisimmat;
@@ -79,7 +71,6 @@ public class YleisimmatSanat1 implements ToistonTunnistin {
             if (value == isoinMaara) {
                 yleisimmat.add(key);
             }
-
         }
         return yleisimmat;
     }
