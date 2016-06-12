@@ -38,7 +38,7 @@ public class YleisimmatSanat1 implements ToistonTunnistin {
 
         return jarjestaSanat();
     }
-
+    // order the list of words to TOP3 words.
     private List<String> jarjestaSanat() {
         List<String> yleisimmat = new ArrayList<>();
         List<Integer> maarat = new ArrayList<>(toistuvatSanat.values());
