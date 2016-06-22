@@ -12,9 +12,12 @@ public class Main {
         data.add(new MittausData(20151004, mittaa()));
         data.add(new MittausData(20151005, mittaa()));
         
+        
         MittausRaportoija1 rap1 = new MittausRaportoija1();
         for (MittausData mittaus : data) {
-            rap1.paivittaisetMaksimit(mittaus.getMittaus(), 5);
+            List raportti = rap1.paivittaisetMaksimit(mittaus.getMittaus(), mittaus.getPaivays());
+            // somehow to print the daily maximum
+            System.out.println(raportti.get(0)); // not working
         }
         
         

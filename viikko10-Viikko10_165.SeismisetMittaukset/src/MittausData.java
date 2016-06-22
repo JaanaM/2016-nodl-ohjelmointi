@@ -1,17 +1,13 @@
 
 import java.util.List;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
- *
+ **Saves measurements with date
+ * 
  * @author Saria
  */
-public class MittausData {
+public class MittausData  {
     private int paivays;
     private List <Double> mittaus; 
 
@@ -44,6 +40,5 @@ public class MittausData {
         }
         return paivays + " " + mittaukset ;
     }
-    
     
 }
