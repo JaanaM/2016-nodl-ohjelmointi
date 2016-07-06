@@ -6,5 +6,14 @@ public class Main {
         // projektissa kokeiluja varten tiedostot
         //    src/testitiedosto.txt
         //    src/kalevala.txt
+
+        Tulostaja tulostaja = new Tulostaja("src/testitiedosto.txt");
+
+        tulostaja.tulostaRivitJoilla("Väinämöinen");
+        System.out.println("-----");
+        tulostaja.tulostaRivitJoilla("Frank Zappa");
+        System.out.println("-----");
+        tulostaja.tulostaRivitJoilla("");
+        System.out.println("-----");
     }
 }
