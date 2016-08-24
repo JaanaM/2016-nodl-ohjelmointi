@@ -6,7 +6,8 @@ Also available in english <a href="http://mooc.fi/courses/2013/programming-part-
 <a href="http://mooc.fi/courses/2013/programming-part-2/material.html"> part II </a> <br/><br/>
 
 Course objective is do the exercise and pass the tests with TMC. 
-<b>Important to look:</b> every week has one bigger exercise on the end of the week:
+<b>Important to look:</b> every week has one bigger exercise on the end of the week: <br/>
+
 Week 5 : <a href="https://github.com/JaanaM/2016-nodl-ohjelmointi/tree/master/viikko05-Viikko05_106.Matkavalokuvat/src"> Matkavalokuvat </a> <br/>
 Week 6 : <a href="https://github.com/JaanaM/2016-nodl-ohjelmointi/tree/master/viikko06-Viikko06_120.Taikanelio/src"> Taikaneliö </a> <br/>
 Week 7 : <a href="https://github.com/JaanaM/2016-nodl-ohjelmointi/tree/master/viikko07-Viikko07_134.AlykasMato/src"> Älykäs mato </a> <br/>
