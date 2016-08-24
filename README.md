@@ -5,7 +5,7 @@ Based on finnish MOOC.fi Java object oriented programming coursework. <br/>
 Also available in english <a href="http://mooc.fi/courses/2013/programming-part-1/material.html"> part I </a>and
 <a href="http://mooc.fi/courses/2013/programming-part-2/material.html"> part II </a> <br/><br/>
 
-Course objective is do the exercise and pass the tests with TMC. 
+Course objective is do the exercise and pass the tests with TMC.  <br/>
 <b>Important to look:</b> every week has one bigger exercise on the end of the week: <br/>
 
 Week 5 : <a href="https://github.com/JaanaM/2016-nodl-ohjelmointi/tree/master/viikko05-Viikko05_106.Matkavalokuvat/src"> Matkavalokuvat </a> <br/>
