@@ -28,14 +28,16 @@ public class Tavara {
 
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj); //To change body of generated methods, choose Tools | Templates.
+        Tavara verrattava = (Tavara) obj;
+        if (obj != null) {
+            return this.nimi.equals(verrattava.nimi);
+        }
+        return false;
     }
 
     @Override
     public int hashCode() {
-        return super.hashCode(); //To change body of generated methods, choose Tools | Templates.
+        return this.nimi.hashCode() + 5;
     }
-    
-    
 
 }
