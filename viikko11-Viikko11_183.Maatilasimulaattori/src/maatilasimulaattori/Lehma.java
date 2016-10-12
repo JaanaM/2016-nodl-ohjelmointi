@@ -26,13 +26,21 @@ public class Lehma implements Lypsava, Eleleva {
 
     @Override
     public double lypsa() {
+        // maitosailioon
+        double siirrettava = getMaara();
+        // lypsetaan
         this.maara = 0.0;
-        return maara;
+        return siirrettava;
     }
 
     @Override
     public void eleleTunti() {
-        this.maara +=  0.7 + (2 - 0.7) * new Random().nextDouble();
+        double tuotettuMaito = 0.7 + (2 - 0.7) * new Random().nextDouble();
+        if (utareet > maara + tuotettuMaito) {
+            this.maara += tuotettuMaito;
+        } else { // maksimi
+            maara = utareet;
+        }
     }
 
     public Lehma() {

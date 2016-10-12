@@ -51,7 +51,7 @@ public class Maitosailio {
 
     @Override
     public String toString() {
-        return "sailiossa tilaa: " + Math.ceil(saldo) + "/"+ Math.ceil(tilavuus);
+        return Math.ceil(saldo) + "/"+ Math.ceil(tilavuus);
     }
     
 }

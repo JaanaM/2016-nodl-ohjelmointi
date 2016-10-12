@@ -1,20 +1,23 @@
 package maatilasimulaattori;
 
+import java.util.LinkedList;
+
 public class Main {
 
     public static void main(String[] args) {
-        Maitosailio sailio = new Maitosailio();
-        sailio.otaSailiosta(100);
-        sailio.lisaaSailioon(25);
-        sailio.otaSailiosta(5);
-        System.out.println(sailio);
+        Maatila maatila = new Maatila("Esko", new Navetta(new Maitosailio()));
+        Lypsyrobotti robo = new Lypsyrobotti();
+        maatila.asennaNavettaanLypsyrobotti(robo);
 
-        sailio = new Maitosailio(50);
-        sailio.lisaaSailioon(100);
-        System.out.println(sailio);
+        maatila.lisaaLehma(new Lehma());
+        maatila.lisaaLehma(new Lehma());
+        maatila.lisaaLehma(new Lehma());
 
-        Lypsyrobotti lypsyrobotti = new Lypsyrobotti();
-        Lehma lehma = new Lehma();
-        lypsyrobotti.lypsa(lehma);
+        maatila.eleleTunti();
+        maatila.eleleTunti();
+
+        maatila.hoidaLehmat();
+
+        System.out.println(maatila);
     }
 }

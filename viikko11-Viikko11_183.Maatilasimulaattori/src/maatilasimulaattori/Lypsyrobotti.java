@@ -10,7 +10,7 @@ package maatilasimulaattori;
  * @author Saria
  */
 public class Lypsyrobotti {
-    Maitosailio sailio;
+    private Maitosailio sailio;
     public Lypsyrobotti() {
         
     }
@@ -26,9 +26,10 @@ public class Lypsyrobotti {
 
     public void lypsa(Lypsava lypsava) {
         try {
-            sailio.lisaaSailioon(lypsava.lypsa());
-        } catch (IllegalStateException e) {
-            System.out.println("Maitosäilitö ei ole asennettu");
+            double maara = lypsava.lypsa();
+            sailio.lisaaSailioon(maara);
+        } catch (Exception e) {
+            System.out.println("Maitosäiliö ei ole asennettu");
         }
     }
 }
