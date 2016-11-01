@@ -5,7 +5,7 @@
  */
 package luola;
 
-public class Pelinappula implements Siirrettava{
+public class Pelinappula {
 
     private char tyyppi;
     private int x;
@@ -34,7 +34,6 @@ public class Pelinappula implements Siirrettava{
         return tyyppi + " " + y + " " + x;
     }
     // moves object
-    @Override
     public void siirra(int dx, int dy) {
         x = x + dx;
         y = y + dy;
