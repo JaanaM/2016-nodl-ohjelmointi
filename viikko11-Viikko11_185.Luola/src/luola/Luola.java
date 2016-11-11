@@ -25,7 +25,7 @@ class Luola {
         // alkutilanne
         naytaTilanne();
         while (siirtoja > 0) {
-            System.out.print("Siirra: ");
+            System.out.print("Siirra: "); // (adws)
             String liikkuja = lukija.nextLine();
             pelikentta.siirraPelaaja(liikkuja, liikkuvatHirviot);
             siirtoja--;
