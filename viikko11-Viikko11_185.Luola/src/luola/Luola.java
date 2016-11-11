@@ -29,25 +29,28 @@ class Luola {
             String liikkuja = lukija.nextLine();
             pelikentta.siirraPelaaja(liikkuja, liikkuvatHirviot);
             siirtoja--;
-            naytaTilanne();
             if (pelikentta.getHirvioidenMaara() == 0) {
                 System.out.println("VOITIT");
                 break;
             }
-        } 
+            naytaTilanne();
+        }
         if (pelikentta.getHirvioidenMaara() > 0) {
             System.out.println("HÄVISIT!");
         }
 
     }
+
     public boolean isLiikkuvatHirviot() {
         return liikkuvatHirviot;
     }
 
     private void naytaTilanne() {
         System.out.println(siirtoja);
+        System.out.println();
         System.out.println(pelikentta);
         pelikentta.pelitilanne();
+        System.out.println("");
     }
 
 }

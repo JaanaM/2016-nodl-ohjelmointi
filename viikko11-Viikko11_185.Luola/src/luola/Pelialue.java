@@ -63,35 +63,35 @@ public class Pelialue {
             do {
                 x = r.nextInt(pelialue.length);
                 y = r.nextInt(pelialue[0].length);
-            } while (!onkoKenttaTyhja(x, y));
+            } while (!onkoKenttaTyhja(x, y, 'h'));
             Pelinappula hirvio = new Pelinappula('h', x, y);
             lisaaPelinappula(hirvio);
         }
 
     }
 
-    void siirraPelaaja(String liikkuja, boolean hirviotLiikkuu) {
+    public void siirraPelaaja(String liikkuja, boolean hirviotLiikkuu) {
         int montako = liikkuja.length();
-        for (int i = 0; i < liikkuja.length(); i++) {
+        for (int i = 0; i < montako; i++) {
             char c = liikkuja.charAt(i);
             switch (c) {
                 case 's':
-                    if (onkoSiirtoSallittu(nappulat.get(0).getX(), nappulat.get(0).getY() + 1)) {
+                    if (onkoSiirtoSallittu(nappulat.get(0).getX(), nappulat.get(0).getY() + 1, '@')) {
                         nappulat.get(0).siirra(0, 1);
                     }
                     break;
-                case 'n':
-                    if (onkoSiirtoSallittu(nappulat.get(0).getX(), nappulat.get(0).getY() - 1)) {
+                case 'w':
+                    if (onkoSiirtoSallittu(nappulat.get(0).getX(), nappulat.get(0).getY() - 1, '@')) {
                         nappulat.get(0).siirra(0, -1);
                     }
                     break;
-                case 'w':
-                    if (onkoSiirtoSallittu(nappulat.get(0).getX() - 1, nappulat.get(0).getY())) {
+                case 'a':
+                    if (onkoSiirtoSallittu(nappulat.get(0).getX() - 1, nappulat.get(0).getY(), '@')) {
                         nappulat.get(0).siirra(-1, 0);
                     }
                     break;
-                case 'e':
-                    if (onkoSiirtoSallittu(nappulat.get(0).getX() + 1, nappulat.get(0).getY())) {
+                case 'd':
+                    if (onkoSiirtoSallittu(nappulat.get(0).getX() + 1, nappulat.get(0).getY(), '@')) {
                         nappulat.get(0).siirra(1, 0);
                     }
                     break;
@@ -128,34 +128,33 @@ public class Pelialue {
             int x = (r.nextInt(2) - 1);
             int y = r.nextInt(2) - 1;
             if (p.getTyyppi() == 'h') {
-                if (onkoSiirtoSallittu(p.getX() + x, p.getY() + y)) {
+                if (onkoSiirtoSallittu(p.getX() + x, p.getY() + y, 'h')) {
                     p.siirra(x, y);
                 }
             }
         }
     }
 
-    private boolean onkoSiirtoSallittu(int x, int y) {
-        if (y > pelialue[0].length || y < 0) {
+    private boolean onkoSiirtoSallittu(int x, int y, char tyyppi) {
+        if (y >= pelialue[0].length || y < 0) {
             return false;
-        } else if (x > pelialue.length || x < 0) {
+        } else if (x >= pelialue.length || x < 0) {
             return false;
         } else {
-            return onkoKenttaTyhja(x, y);
+            return onkoKenttaTyhja(x, y, tyyppi);
         }
     }
 
-    private boolean onkoKenttaTyhja(int x, int y) {
-        if (nappulat.size() > 1) {
-        for (Pelinappula nappula : nappulat) {
-            if (nappula.getX() == x && nappula.getY() == y) {
-                if (nappula.getTyyppi() == 'h') {
-                    return false;
+    private boolean onkoKenttaTyhja(int x, int y, char tyyppi) {
+        if (nappulat.size() > 0) {
+            if (tyyppi == 'h') { // check that monsters wont go same point
+                for (Pelinappula nappula : nappulat) {
+                    if (nappula.getX() == x && nappula.getY() == y) {
+                        return false;
+                    }
                 }
             }
-        }    
         }
-        
         return true;
     }
 
@@ -163,16 +162,15 @@ public class Pelialue {
         Pelinappula pelaaja = nappulat.get(0); // get player
         ArrayList<Pelinappula> poisttettavat = new ArrayList();
         for (Pelinappula pelinappula : nappulat) {
-            {
-                if (pelinappula.getTyyppi() == 'h') { // is the monster in same position as the player
-                    if (pelinappula.getX() == pelaaja.getX() && pelinappula.getY() == pelaaja.getY()) {
-                        poisttettavat.add(pelinappula);
-                    }
+            if (pelinappula.getTyyppi() == 'h') { // is the monster in same position as the player
+                if (pelinappula.getX() == pelaaja.getX() && pelinappula.getY() == pelaaja.getY()) {
+                    poisttettavat.add(pelinappula);
                 }
             }
         }
         // remove the monsters
         nappulat.removeAll(poisttettavat);
+        hirvioidenMaara = hirvioidenMaara - poisttettavat.size();
     }
 
 }
