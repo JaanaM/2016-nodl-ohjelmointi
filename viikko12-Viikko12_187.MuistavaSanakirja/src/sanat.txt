@@ -1,0 +1,5 @@
+monkey:apina
+alla oleva:below
+kissa:cat
+banaani:banana
+ohjelmointi:programming
